@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //第一题
+        // let a = b = 10;
+        // (function () {
+        //     let a = b = 20
+        // })()
+        // console.log(a)//10
+        // console.log(b)//20
+
+
+        //第二题
+        // var a = { n: 1 }
+        // var b = a
+        // //var a.x= undefined
+        // a.x = a = { n: 2 }
+        // console.log(a);// {n: 2}
+        // console.log(b);  //{n: 1, x: {n:2}}
+        // console.log(a.x) // undefined
+        // console.log(b.x)//{ n: 2 }
+
+        //第三题
+        // var name = 'World';
+        // (function () {
+        //     if (typeof name === 'undefined') {
+        //         var name = "Jack"
+        //         console.info('Goodbye ' + name)
+        //     } else {
+        //         console.info('Hello ' + name)
+        //     }
+        // })() //GoodbyeJack
+
+        //第四题
+        // var a = {},
+        //     b = { key: 'b' },
+        //     c = { key: 'c' }
+        // a[b] = 123
+        // a[c] = 456
+        // console.log(a[b]) // 456
+        // console.log(a[c]) // 456
+        // console.log(a)
+        // console.log(b.toString(), a.toString())
+
+        //第五题
+        // var out = 25
+        // var inner = {
+        //     out: 20,
+        //     func: function () {
+        //         var out = 30
+        //         return this.out
+        //     }
+        // };
+        // console.log((inner.func, inner.func)())//25
+        // // 逗号的作用
+        // console.log(inner.func())//20
+        // console.log((inner.func)())//20
+        // console.log((inner.func = inner.func)())//25
+
+        //第六题
+        // let a = 1
+        // function b(a) {
+        //     a = 2
+        //     console.log(a)//2
+        // }
+        // b(a)
+        // console.log(a)//1
+
+        //第七题
+        // function a(b = c, c = 1) { 
+        //     console.log(b, c) 
+        // } 
+        // a()
+
+        //第八题
+        //    var arr = [0, 1, 2]
+        //    arr[10] = 10
+        //    console.log(arr.filter(function (x) { 
+        //        console.log(x === undefined)
+        //        return x === undefined 
+        //     }))
+
+        //第九题
+        // console.log(1 + NaN)
+        // console.log("1" + 3)
+        // console.log(1 + undefined)
+        // console.log(1 + null)
+        // console.log(1 + {})
+        // console.log(1 + [])
+        // console.log([] + {})
+
+        //第十题
+        // let { a, b, c } = { c: 3, b: 2, a: 1 }
+        // console.log(a, b, c)
+
+        //第十一题
+        // console.log(Object.assign([1, 2, 3], [4, 5]))
+        // console.log(typeof undefined == typeof NULL)
+        // console.log(typeof function() {} == typeof class{})
+
+        //第十二题
+        // var x = 1
+        // switch (x++) {
+        //     case 0:
+        //      ++x
+        //     case 1: 
+        //     ++x
+        //     case 2:
+        //      ++x
+        // }
+        // console.log(x)
+
+        //第十三题
+        // var count = 0
+        // console.log(typeof count === "number")
+        // console.log(!!typeof count === "number")
+
+        //第十四题
+
+        // "use strict"
+        // a = 1
+        // var a = 2
+        // console.log(window.a)
+        // console.log(a)
+
+
+        //第十五题
+        // var i = 1
+        // function b() { 
+        //     console.log(i) 
+        // }
+        // function a() { 
+        //     var i = 2 
+        //     b() 
+        // } 
+        // a()
+
+        //第十六题
+
+        // var obj = { 
+        //     name: 'abc', 
+        //     fn: () => { 
+        //         console.log(this.name) 
+        //     } }; 
+        //     obj.name = 'bcd'
+        //     obj.fn()
+
+        //第十六题
+        // const obj = { 
+        //     a: { a: 1 } 
+        // }; 
+        // const obj1 = {
+        //     a: { b: 1 }
+        // }; 
+        //      console.log(Object.assign(obj, obj1))
+
+        //第十七题
+        // console.log(a) 
+        // var a = 1
+        // var getNum = function () { 
+        //     a = 2 
+        // }
+        // function getNum() { 
+        //     a = 3
+        //  }
+        //  console.log(a)
+        //  getNum()
+        //  console.log(a)
+
+        //第十八题
+        // var scope = 'global scope'
+        // function a(){ 
+        //     function b(){ 
+        //         console.log(scope) 
+        //     } 
+        //     return b 
+        //     var scope = 'local scope' 
+        // }
+        // a()()
+
+        //第十九题
+        // function fn() { 
+        //     console.log(this)
+        //  } 
+        //  var arr = [fn]
+        //  arr[0]()
+
+        //第二十题
+        // var a = 1
+        // function a(){ }
+        // console.log(a)
+        // var b
+        // function b(){ }
+        // console.log(b)
+        // function b(){ } 
+        // var b
+        // console.log(b)
+
+        //第二十一题
+        function Foo() {
+            getName = function () {
+                console.log(1)
+            }
+            return this
+        }
+        Foo.getName = function () {
+            console.log(2)
+        }
+        Foo.prototype.getName = function () {
+            console.log(3)
+        }
+        var getName = function () {
+            console.log(4)
+        }
+        function getName() {
+            console.log(5)
+        }
+        //请写出以下输出结果：
+        Foo.getName() //2
+        Foo.getName() //2
+
+        getName() //4
+        Foo().getName() //1
+        getName() //1
+        new Foo.getName() //2
+        new Foo().getName()//3
+        new new Foo().getName()//3
+
+       
+       //第二十二题
+
+    //    const person = { 
+    //        address: { 
+    //            country: "china", 
+    //            city: "hangzhou" 
+    //         }, 
+    //         say: function () { 
+    //             console.log(`it's ${this.name}, from ${this.address.country}`)
+    //          }, 
+    //          setCountry: function (country) { 
+    //              this.address.country = country 
+    //         } 
+    //    } 
+    //     const p1 = Object.create(person)
+    //     const p2 = Object.create(person)
+    //     p1.name = "Matthew"
+    //     p1.setCountry("American")
+    //     p2.name = "Bob"
+    //     p2.setCountry("England")
+    //     p1.say()
+    //     p2.say()
+      
+       //第二十三题
+        //    setTimeout(function () { 
+        //        console.log(1) 
+        //     }, 0)
+        //     new Promise(function (resolve) { 
+        //         console.log(2)
+        //         for (var i = 0; i < 10000; i++) { 
+        //             i == 9999 && resolve() 
+        //         } 
+        //         console.log(3) 
+        //     }).then(function () { 
+        //         console.log(4) 
+        //     })
+        //     console.log(5)
+
+        //第二十四题
+        // console.log('1'); 
+        // setTimeout(function () { 
+        //     console.log('2'); 
+        //     process.nextTick(function () { 
+        //         console.log('3'); 
+        //     }); 
+        //     newPromise(function (resolve) { 
+        //         console.log('4'); 
+        //         resolve(); 
+        //     }).then(function () { 
+        //         console.log('5');
+        //      }); 
+        // }); 
+        // process.nextTick(function () { 
+        //     console.log('6'); 
+        // }); 
+        // newPromise(function (resolve) { 
+        //     console.log('7'); resolve(); 
+        // }).then(function () { 
+        //     console.log('8'); 
+        // }); 
+        // setTimeout(function () { 
+        //     console.log('9'); 
+        //     process.nextTick(function () { 
+        //         console.log('10'); 
+        //     }) 
+        //     newPromise(function (resolve) { 
+        //         console.log('11'); resolve(); 
+        //     }).then(function () { 
+        //         console.log('12') 
+        //     }); 
+        // })
+    </script>
+</body>
+
+</html>
